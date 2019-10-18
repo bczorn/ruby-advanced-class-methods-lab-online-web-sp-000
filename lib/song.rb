@@ -10,4 +10,56 @@ class Song
     self.class.all << self
   end
 
+  def self.create
+    song = self.new
+    song.save
+    song
+  end
+  
+  def self.new_by_name(name)
+    s = self.create
+    s.name = name
+    s
+  end
+  
+  def self.create_by_name(name)
+    s = self.create
+    s.name = name
+    s
+  end
+
+  def self.find_by_name(name)
+    self.all.find {|p| p.name == name}
+  end
+  
+  def self.find_or_create_by_name(name)
+    if self.find_by_name(name) == nil
+      self.create_by_name(name)
+    else
+      return self.find_by_name(name)
+    end
+  end
+  
+  def self.alphabetical
+    l = self.all.sort_by {|x, y| x.name}
+    l
+  end
+  
+  def self.new_from_filename(filename)
+    x = filename.split(" - ")
+    artist_name = x[0]
+    y = x[1].split(".")
+    name = y[0]
+    self.create_by_name(name)
+    name
+  end
+  
+  def self.create_from_filename
+    
+  end
+  
+  def self.destroy_all
+    self.all.clear
+  end
+
 end
