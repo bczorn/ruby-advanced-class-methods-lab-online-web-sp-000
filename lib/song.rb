@@ -29,11 +29,6 @@ class Song
     s
   end
   
-  def self.create_by_artist_name(artist_name)
-    s = self.create
-    s.artist_name = artist_name
-    s
-  end
 
   def self.find_by_name(name)
     self.all.find {|p| p.name == name}
@@ -58,8 +53,8 @@ class Song
     b = a[1]
     b = b.split(".")
     name = b[0].to_s
-    self.create_by_name(name)
-    self.create_by_artist_name(artist_name)
+    self.create_by_name(name, artist_name)
+
   end
   
   def self.create_from_filename
