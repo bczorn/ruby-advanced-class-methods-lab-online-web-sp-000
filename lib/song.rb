@@ -58,7 +58,7 @@ class Song
     b = a[1]
     b = b.split(".")
     name = b[0].to_s
-    self.create_by_name(name, artist_name)
+    self.create_by_artist_name(name, artist_name)
 
   end
   
