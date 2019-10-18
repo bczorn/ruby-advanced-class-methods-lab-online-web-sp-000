@@ -50,7 +50,7 @@ class Song
     artist_name = a[0]
     b = a[1]
     b.delete!(".mp3")
-    name = b
+    name = b.to_s
   end
   
   def self.create_from_filename
