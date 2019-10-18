@@ -51,7 +51,7 @@ class Song
     b = a[1]
     b = b.split(".")
     name = b[0].to_s
-    name
+    self.create_by_name(name)
   end
   
   def self.create_from_filename
