@@ -50,7 +50,7 @@ class Song
     artist_name = x[0]
     y = x[1].split(".")
     name = y[0]
-    self.create_by_name(name)
+    self.new_by_name(name)
     artist_name
   end
   
