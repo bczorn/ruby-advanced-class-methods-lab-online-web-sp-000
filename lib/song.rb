@@ -49,7 +49,7 @@ class Song
     a = filename.split(" - ")
     artist_name = a[0].to_s
     b = a[1]
-    b.split!(".")
+    b = b.split(".")
     name = b[0].to_s
     name
   end
